@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-script: "Playfair Display", ui-serif, Georgia, serif;
+
+  --color-ink: #0a0a0a;
+  --color-coal: #101010;
+  --color-card: #161616;
+  --color-line: #2a2a2a;
+  --color-acid: #c5e01c;
+  --color-acid-bright: #dcf72e;
+  --color-acid-deep: #a8d000;
+  --color-cream: #f4f4ec;
+  --color-fog: #a3a3a3;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-ink);
+  color: var(--color-cream);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hide native cursor only on precise pointers (desktop) */
+@media (pointer: fine) {
+  body,
+  a,
+  button,
+  select,
+  input,
+  textarea,
+  [data-cursor] {
+    cursor: none;
+  }
+}
+
+::selection {
+  background: var(--color-acid);
+  color: #0a0a0a;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+/* ---------- surfaces ---------- */
+.card-dark {
+  background: linear-gradient(160deg, #1a1a1a 0%, #131313 100%);
+  border: 1px solid var(--color-line);
+}
+
+.hairline {
+  border: 1px solid var(--color-line);
+}
+
+.text-acid-glow {
+  color: var(--color-acid);
+  text-shadow: 0 0 32px rgba(197, 224, 28, 0.35);
+}
+
+.acid-gradient-text {
+  background: linear-gradient(100deg, #f4f4ec 10%, #c5e01c 60%, #dcf72e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.noise-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.section-pad {
+  padding-inline: clamp(1.25rem, 5vw, 4rem);
+}
+
+.magnetic-btn {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+/* ---------- marquee ---------- */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------- floats ---------- */
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+@keyframes pulse-acid {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-float {
+  animation: float-y 5s ease-in-out infinite;
+}
+.animate-pulse-acid {
+  animation: pulse-acid 3s ease-in-out infinite;
+}
+.animate-spin-slow {
+  animation: spin-slow 26s linear infinite;
+}
+
+.project-img {
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.project-card:hover .project-img {
+  transform: scale(1.06);
+}
+
+/* Custom cursor hidden on touch */
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
+
+/* Focus visibility for a11y */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-acid);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .marquee-track,
+  .animate-float,
+  .animate-pulse-acid,
+  .animate-spin-slow {
+    animation: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
