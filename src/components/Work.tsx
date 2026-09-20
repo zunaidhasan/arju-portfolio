@@ -8,7 +8,7 @@ export default function Work() {
   const [selected, setSelected] = useState<Project | null>(null);
 
   return (
-    <section id="work" aria-label="Selected work" className="section-pad relative py-24 md:py-32">
+    <section id="work" aria-label="Selected work" className="section-rule section-pad relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">

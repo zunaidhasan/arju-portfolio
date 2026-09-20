@@ -51,7 +51,7 @@ export default function Contact() {
     "w-full rounded-2xl border border-line bg-ink/70 px-4 py-3.5 text-sm text-cream placeholder:text-fog/60 transition focus:border-acid/70 focus:outline-none";
 
   return (
-    <section id="contact" aria-label="Contact" className="section-pad relative py-24 md:py-32">
+    <section id="contact" aria-label="Contact" className="section-rule section-pad relative py-24 md:py-32">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"

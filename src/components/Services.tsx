@@ -6,7 +6,7 @@ import { services } from "../data/portfolio";
 
 export default function Services() {
   return (
-    <section id="services" aria-label="Services" className="section-pad relative py-24 md:py-32">
+    <section id="services" aria-label="Services" className="section-rule section-pad relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <p className="mb-3 text-xs font-bold tracking-[0.25em] text-acid uppercase">
