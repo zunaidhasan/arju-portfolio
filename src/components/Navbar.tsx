@@ -39,7 +39,7 @@ export default function Navbar() {
           <a
             href="#top"
             data-cursor="hover"
-            className="flex items-center gap-2.5 text-lg font-extrabold tracking-tight"
+            className="font-display flex items-center gap-2.5 text-lg font-bold tracking-tight"
           >
             <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-acid text-sm font-black text-ink shadow-[0_0_24px_rgba(197,224,28,0.45)]">
               A
@@ -74,7 +74,7 @@ export default function Navbar() {
                 href="#contact"
                 data-cursor="hover"
                 data-cursor-label="Go"
-                className="rounded-full bg-acid px-5 py-2.5 text-sm font-bold text-ink shadow-[0_0_28px_rgba(197,224,28,0.35)] transition hover:bg-acid-bright"
+                className="premium-button rounded-full bg-acid px-5 py-2.5 text-sm font-bold text-ink shadow-[0_0_28px_rgba(197,224,28,0.35)] transition hover:bg-acid-bright"
               >
                 Start a Project
               </a>

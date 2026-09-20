@@ -74,7 +74,7 @@ export default function Hero({ mouse }: { mouse: MouseState }) {
     <section
       id="top"
       aria-label="Intro"
-      className="relative flex min-h-screen flex-col justify-center overflow-hidden pt-28 pb-10"
+      className="relative flex min-h-screen flex-col justify-center overflow-hidden border-b border-line/60 pt-28 pb-10"
     >
       {/* lime aura behind hero */}
       <div
@@ -106,7 +106,7 @@ export default function Hero({ mouse }: { mouse: MouseState }) {
             initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="text-[clamp(2.5rem,6.5vw,4.9rem)] leading-[1.02] font-extrabold tracking-tight"
+            className="font-display max-w-3xl text-[clamp(2.5rem,6.5vw,4.9rem)] leading-[1.02] font-bold tracking-[-0.055em]"
             style={{
               transform: `translate3d(${mouse.nx * 8}px, ${mouse.ny * 6}px, 0)`,
             }}
@@ -143,7 +143,7 @@ export default function Hero({ mouse }: { mouse: MouseState }) {
                 href="#contact"
                 data-cursor="hover"
                 data-cursor-label="Go"
-                className="inline-flex items-center gap-2 rounded-full bg-acid px-8 py-4 text-sm font-bold text-ink shadow-[0_0_36px_rgba(197,224,28,0.35)] transition hover:bg-acid-bright"
+                className="premium-button inline-flex items-center gap-2 rounded-full bg-acid px-8 py-4 text-sm font-bold text-ink shadow-[0_0_36px_rgba(197,224,28,0.35)] transition hover:bg-acid-bright"
               >
                 Start a Project
                 <span aria-hidden>→</span>

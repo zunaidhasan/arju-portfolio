@@ -5,7 +5,7 @@ import { LINKS, heroStats, profile, skills } from "../data/portfolio";
 
 export default function About() {
   return (
-    <section id="about" aria-label="About" className="section-pad relative py-24 md:py-32">
+    <section id="about" aria-label="About" className="section-rule section-pad relative py-24 md:py-32">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"

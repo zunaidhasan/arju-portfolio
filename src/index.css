@@ -1,18 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-script: "Playfair Display", ui-serif, Georgia, serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "DM Sans", ui-sans-serif, system-ui, sans-serif;
 
-  --color-ink: #0a0a0a;
-  --color-coal: #101010;
-  --color-card: #161616;
-  --color-line: #2a2a2a;
+  --color-ink: #0b0d0b;
+  --color-coal: #111511;
+  --color-card: #171c17;
+  --color-line: #2b352b;
   --color-acid: #c5e01c;
   --color-acid-bright: #dcf72e;
   --color-acid-deep: #a8d000;
-  --color-cream: #f4f4ec;
-  --color-fog: #a3a3a3;
+  --color-cream: #f3f5e9;
+  --color-fog: #a9b0a4;
 }
 
 html {
@@ -27,6 +29,11 @@ body {
   font-family: var(--font-sans);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  background-image:
+    linear-gradient(rgba(197, 224, 28, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(197, 224, 28, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 50% -10%, #273022 0%, transparent 42%);
+  background-size: 72px 72px, 72px 72px, 100% 100%;
 }
 
 /* Hide native cursor only on precise pointers (desktop) */
@@ -53,12 +60,18 @@ body {
 
 .font-script {
   font-family: var(--font-script);
+  letter-spacing: -0.04em;
+}
+
+.font-display {
+  font-family: var(--font-display);
 }
 
 /* ---------- surfaces ---------- */
 .card-dark {
-  background: linear-gradient(160deg, #1a1a1a 0%, #131313 100%);
+  background: linear-gradient(145deg, rgba(29, 36, 28, 0.96), rgba(16, 20, 16, 0.96));
   border: 1px solid var(--color-line);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.045), 0 24px 70px rgba(0, 0, 0, 0.18);
 }
 
 .hairline {
@@ -90,9 +103,43 @@ body {
   padding-inline: clamp(1.25rem, 5vw, 4rem);
 }
 
+.section-rule {
+  position: relative;
+}
+
+.section-rule::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: max(1.25rem, 5vw);
+  right: max(1.25rem, 5vw);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(197, 224, 28, 0.38), transparent);
+}
+
 .magnetic-btn {
   transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform;
+}
+
+.premium-button {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.premium-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.42), transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.premium-button:hover::after {
+  transform: translateX(120%);
 }
 
 /* ---------- marquee ---------- */
@@ -152,6 +199,11 @@ body {
 }
 .project-card:hover .project-img {
   transform: scale(1.06);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
 }
 
 /* Custom cursor hidden on touch */
