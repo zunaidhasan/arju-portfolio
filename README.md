@@ -14,15 +14,7 @@ npm run build    # production build → dist/
 
 Deploy `dist/` to Vercel / Netlify / any static host.
 
-## Swap in the real photo ★
-
-1. Save the portrait as `public/images/arju-portrait.jpg`
-   (square-ish, ≥ 800px, JPG/PNG/WebP all fine).
-2. Open `src/data/portfolio.ts` and set:
-   ```ts
-   PHOTO_SRC: "/images/arju-portrait.jpg",
-   ```
-3. Rebuild. The photo appears in the **hero card** and the **about** section
+1. Rebuild. The photo appears in the **hero card** and the **about** section
    with the lime ring + glow automatically.
 
 Until then, a styled **"AA" monogram** placeholder is shown.
@@ -69,7 +61,3 @@ src/
   scroll locked while open.
 - Focus-visible lime outlines throughout; native cursor restored on touch.
 
-## Links
-
-- Upwork: https://www.upwork.com/freelancers/arjuakter
-- Behance: https://www.behance.net/mstarjuakter
